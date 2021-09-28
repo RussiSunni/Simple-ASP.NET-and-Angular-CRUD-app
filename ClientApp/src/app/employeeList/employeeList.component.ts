@@ -8,5 +8,6 @@ import { FormBuilder } from '@angular/forms';
 
 export class EmployeeListComponent {
 
- 
+  employees = ['Really Smart', 'Super Flexible',
+    'Super Hot', 'Weather Changer'];
 }

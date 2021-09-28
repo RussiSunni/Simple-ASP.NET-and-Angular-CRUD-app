@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
 })
 export class DepartmentListComponent {
 
-
+  departments = ['Really Smart', 'Super Flexible',
+    'Super Hot', 'Weather Changer'];
 }
