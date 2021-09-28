@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { EmployeeListComponent } from './employeeList/employeeList.component';
 import { EmployeeCreateEditComponent } from './employeeCreateEdit/employeeCreateEdit.component';
+import { DepartmentListComponent } from './departmentList/departmentList.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { MatButtonModule, MatIconModule, MatIconRegistry, MatListModule, MatSidenavModule, MatToolbarModule } from '@angular/material';
@@ -20,7 +21,8 @@ import { MatButtonModule, MatIconModule, MatIconRegistry, MatListModule, MatSide
     HomeComponent,
     LoginComponent,
     EmployeeListComponent,
-    EmployeeCreateEditComponent
+    EmployeeCreateEditComponent,
+    DepartmentListComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

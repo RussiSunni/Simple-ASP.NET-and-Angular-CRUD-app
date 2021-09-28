@@ -33,6 +33,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\departmentCreateEdit\departmentCreateEdit.component.ts" />
+    <None Remove="ClientApp\src\app\departmentList\departmentList.component.ts" />
     <None Remove="ClientApp\src\app\employeeCreateEdit\employeeCreateEdit.component.ts" />
     <None Remove="ClientApp\src\app\employeeList\employeeList.component.ts" />
     <None Remove="ClientApp\src\app\login\login.component.ts" />
