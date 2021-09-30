@@ -6,7 +6,11 @@ import { Component } from '@angular/core';
 })
 export class EmployeeCreateEditComponent {
 
-  managers = ['Really Smart', 'Super Flexible',
-    'Super Hot', 'Weather Changer'];
+  addHero(hero: Hero): Observable<Hero> {
+    return this.http.post<Department>(this.heroesUrl, hero, httpOptions)
+      .pipe(
+        catchError(this.handleError('addHero', hero))
+      );
+  }
   
 }

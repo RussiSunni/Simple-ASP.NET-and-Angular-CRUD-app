@@ -1,7 +1,7 @@
 <div class="container">
   <h3>Create / Edit Department</h3>
 
-  <form (ngSubmit)="onSubmit()" #departmentForm="ngForm">
+  <!--<form (ngSubmit)="onSubmit()" #departmentForm="ngForm">
 
     <div class="form-group">
       <label for="name">*Name</label>
@@ -33,4 +33,15 @@
     <button type="submit" class="btn btn-success" [disabled]="!departmentForm.form.valid">Submit</button>
 
   </form>
+  </div>-->
+
+
+  <div>
+    <label for="new-department">Department name: </label>
+    <input id="new-department" #departmentName />
+
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button class="add-button" (click)="add(departmentName.value); departmentName.value=''">
+      Add department
+    </button>
   </div>

@@ -1,8 +1,23 @@
 <h3>Department List</h3>
 
-<ul>
-  <li *ngFor="let department of departments">
-    {{department}}
-  </li>
-</ul>
+
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="departments">
+  <thead>
+    <tr>
+      <th>Actions</th>
+      <th>Name</th>
+      <th>Manager</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let department of departments">
+      <td></td>
+      <td>{{ department.name }}</td>
+      <td>{{ department.manager }}</td>
+      <td>{{ department.status }}</td>
+    </tr>
+  </tbody>
+ </table>
 
