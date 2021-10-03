@@ -3,16 +3,22 @@
 
   <form [formGroup]="department" (ngSubmit)="onSubmit(department)">
 
-    <label for="name">Name: </label>
-    <input id="name" type="text" formControlName="name" name="name"><br>
+    <div class="form-group">
+      <label for="name">Name: </label>
+      <input id="name" class="form-control" type="text" formControlName="name" name="name">
+    </div>
 
-    <label for="manager">Manager: </label>
-    <input id="manager" type="text" formControlName="manager" name="manager"><br>
+    <div class="form-group">
+      <label for="manager">Manager: </label>
+      <input id="manager" class="form-control" type="text" formControlName="manager" name="manager">
+    </div>
 
-    <label for="status">Status: </label>
-    <input id="status" type="text" formControlName="status" name="status"><br>
- 
-    <button type="submit">Submit</button> 
+    <div class="form-group">
+      <label for="status">Status: </label>
+      <input id="status" class="form-control" type="text" formControlName="status" name="status">
+    </div>
+
+    <button class="btn btn-success" type="submit">Submit</button>
 
   </form>
 
@@ -20,5 +26,5 @@
 
 
 
-  
+
 

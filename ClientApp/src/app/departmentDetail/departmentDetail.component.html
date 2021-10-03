@@ -1,10 +1,19 @@
 <div *ngIf="department">
   <h2>{{department.name | uppercase}} Details</h2>
   <div><span>id: </span>{{department.id}}</div>
-  <div>
-    <label for="department-name">Department name: </label>
-    <input id="department-name" [(ngModel)]="department.name" placeholder="Department name" />
+
+  <div class="form-group">
+    <label for="department-name">*Name</label>
+    <input type="text" class="form-control" id="department-name" [(ngModel)]="department.name" placeholder="Department name" />
   </div>
-  <button (click)="goBack()">go back</button>
-  <button (click)="save()">save</button>
+  <div class="form-group">
+    <label for="department-manager">*Manager</label>
+    <input type="text" class="form-control" id="department-manager" [(ngModel)]="department.manager" placeholder="Department manager" />
+  </div>
+  <div class="form-group">
+    <label for="department-status">*Status</label>
+    <input type="text" class="form-control" id="department-status" [(ngModel)]="department.status" placeholder="Department status" />
+  </div>
+  <button class="btn btn-warning" (click)="goBack()">go back</button>
+  <button class="btn btn-success" (click)="save()">save</button>
 </div>
