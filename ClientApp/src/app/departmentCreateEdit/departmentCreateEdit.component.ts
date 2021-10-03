@@ -23,6 +23,7 @@ export class DepartmentCreateEditComponent {
 
   onSubmit({ value }: { value: Department }) {
     console.log(value);
+    this.department.reset();
     return this.http.post(baseUrl+'/departments', value).subscribe();
     }
   }
