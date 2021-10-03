@@ -11,16 +11,20 @@ import { DepartmentService } from '../department/department.service';
 export class DepartmentListComponent {
   public departments: Department[];
 
-  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string, private departmentService: DepartmentService) {
-    http.get<Department[]>(baseUrl + 'departments').subscribe(result => {
-      this.departments = result;
-    }, error => console.error(error));
+  constructor(http: HttpClient, private departmentService: DepartmentService) { }
+
+  ngOnInit() {
+    this.getDepartments();
+  }
+
+  getDepartments(): void {
+    this.departmentService.getDepartments()
+      .subscribe(departments => this.departments = departments);
   }
 
   delete(department: Department): void {
     this.departments = this.departments.filter(h => h !== department);
     this.departmentService.deleteDepartment(department.id).subscribe();
-  }
-
+  }   
 }
  

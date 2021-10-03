@@ -19,7 +19,7 @@ export class DepartmentCreateEditComponent {
     name: new FormControl(''),
     manager: new FormControl(''),
     status: new FormControl(''),
-  });
+  }); 
 
   onSubmit({ value }: { value: Department }) {
     console.log(value);

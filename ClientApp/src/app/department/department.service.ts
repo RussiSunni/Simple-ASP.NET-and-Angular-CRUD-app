@@ -21,15 +21,14 @@ export class DepartmentService {
     private messageService: MessageService) { }
 
 
-  /** DELETE: delete the department */
-  deleteDepartment(id: number): Observable<Department> {
-    const url = `${baseUrl}/${id}`;
-    return this.http.delete<Department>(url, this.httpOptions).pipe(
-      tap(_ => this.log(`deleted department id=${id}`)),
-      catchError(this.handleError<Department>('deleteDepartment'))
-    );
+  /** GET departments */
+  getDepartments(): Observable<Department[]> {
+    return this.http.get<Department[]>(baseUrl)
+      .pipe(
+        tap(_ => this.log('fetched departments')),
+        catchError(this.handleError<Department[]>('getDepartments', []))
+      );
   }
-
 
   /** GET: get department details, by id */
   getDepartment(id: number): Observable<Department> {
@@ -40,19 +39,39 @@ export class DepartmentService {
     );
   }
 
+  
 
   /** PUT: update the department */
   updateDepartment(department: Department): Observable<any> {
     const url = `${baseUrl}/${department.id}`;
-   // const url = 'https://localhost:44319/departments/1';
     return this.http.put(url, department, this.httpOptions).pipe(
       tap(_ => this.log(`updated department id=1`)),
       catchError(this.handleError<any>('updateDepartment'))
     );
-  }  
+  }
 
- 
+  /** DELETE: delete the department */
+  deleteDepartment(id: number): Observable<Department> {
+    const url = `${baseUrl}/${id}`;
+    return this.http.delete<Department>(url, this.httpOptions).pipe(
+      tap(_ => this.log(`deleted department id=${id}`)),
+      catchError(this.handleError<Department>('deleteDepartment'))
+    );
+  }
 
+  /* GET departments whose name contains search term */
+  searchDepartments(term: string): Observable<Department[]> {
+    if (!term.trim()) {
+      // if not search term, return empty hero array.
+      return of([]);
+    }
+    return this.http.get<Department[]>(`${baseUrl}/?name=${term}`).pipe(
+      tap(x => x.length ?
+        this.log(`found departments matching "${term}"`) :
+        this.log(`no departments matching "${term}"`)),
+      catchError(this.handleError<Department[]>('searchSepartments', []))
+    );
+  }
 
 /**
  * Handle Http operation that failed.

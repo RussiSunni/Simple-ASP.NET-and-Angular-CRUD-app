@@ -13,6 +13,7 @@ import { EmployeeCreateEditComponent } from './employeeCreateEdit/employeeCreate
 import { DepartmentListComponent } from './departmentList/departmentList.component';
 import { DepartmentCreateEditComponent } from './departmentCreateEdit/departmentCreateEdit.component';
 import { DepartmentDetailComponent } from './departmentDetail/departmentDetail.component';
+import { DepartmentSearchComponent } from './departmentSearch/departmentSearch.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { MatButtonModule, MatIconModule, MatIconRegistry, MatListModule, MatSidenavModule, MatToolbarModule } from '@angular/material';
@@ -26,8 +27,8 @@ import { MatButtonModule, MatIconModule, MatIconRegistry, MatListModule, MatSide
     EmployeeCreateEditComponent,
     DepartmentListComponent,
     DepartmentCreateEditComponent,
-    DepartmentDetailComponent   
- 
+    DepartmentDetailComponent,
+    DepartmentSearchComponent 
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
