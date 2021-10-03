@@ -1,7 +1,8 @@
-using System;
+﻿using System;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using HR.Models;
 
 namespace HR.Data
 {
@@ -55,5 +56,7 @@ namespace HR.Data
                 });
             });
         }
+
+        public DbSet<HR.Models.Employee> Employee { get; set; }
     }
 }
