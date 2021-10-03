@@ -25,17 +25,19 @@ export class DepartmentDetailComponent implements OnInit {
   getDepartment(): void {
     const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
     this.departmentService.getDepartment(id)
-      .subscribe(department => this.department = department);
+      .subscribe(department => this.department = department); 
   }
 
   goBack(): void {
     this.location.back();
   }
 
-  //save(): void {
-  //  if (this.department) {
-  //    this.departmentService.updateDepartment(this.department)
-  //      .subscribe(() => this.goBack());
-  //  }
-  //}
+  save(): void {
+   
+   
+    if (this.department) {
+      this.departmentService.updateDepartment(this.department)
+        .subscribe(() => this.goBack());
+    }
+  }
 }

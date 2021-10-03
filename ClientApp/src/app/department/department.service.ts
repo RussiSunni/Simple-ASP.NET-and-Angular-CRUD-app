@@ -7,12 +7,10 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { Department } from './department';
 import { MessageService } from '../message.service';
 
-const baseUrl = 'https://localhost:44319';
+const baseUrl = 'https://localhost:44319/departments';
 
 @Injectable({ providedIn: 'root' })
 export class DepartmentService {
-
-  private departmentsUrl = 'https://localhost:44319/departments';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }) 
@@ -23,48 +21,37 @@ export class DepartmentService {
     private messageService: MessageService) { }
 
 
+  /** DELETE: delete the department */
   deleteDepartment(id: number): Observable<Department> {
-    const url = `${baseUrl+'/departments'}/${id}`;
-
+    const url = `${baseUrl}/${id}`;
     return this.http.delete<Department>(url, this.httpOptions).pipe(
       tap(_ => this.log(`deleted department id=${id}`)),
       catchError(this.handleError<Department>('deleteDepartment'))
     );
   }
 
+
+  /** GET: get department details, by id */
   getDepartment(id: number): Observable<Department> {
-    const url = `${this.departmentsUrl}/${id}`;
+    const url = `${baseUrl}/${id}`;
     return this.http.get<Department>(url).pipe(
       tap(_ => this.log(`fetched department id=${id}`)),
       catchError(this.handleError<Department>(`getDepartment id=${id}`))
     );
   }
 
-  //get(id): Observable<any> {
-  //  return this.http.get(`${baseUrl + '/departments'}/${id}`);
-  //}
 
-  //update(id, data): Observable<any> {
-  //  return this.http.put(`${baseUrl + '/departments'}/${id}`, data);
-  //}
+  /** PUT: update the department */
+  updateDepartment(department: Department): Observable<any> {
+    const url = `${baseUrl}/${department.id}`;
+   // const url = 'https://localhost:44319/departments/1';
+    return this.http.put(url, department, this.httpOptions).pipe(
+      tap(_ => this.log(`updated department id=1`)),
+      catchError(this.handleError<any>('updateDepartment'))
+    );
+  }  
 
-  //delete(id): Observable<any> {
-  //  return this.http.delete(`${baseUrl + '/departments'}/${id}`);
-  //}
-
-  /** GET by id */
-  //getDepartmentById(departmentId: string): Observable<Department> {
-  //  return this.http.get<Department>(this.departmentsUrl + departmentId);
-  //}
  
-
-  /** POST: add a new department to the server */
-  //addDepartment(department: Department): Observable<Department> {
-  //  return this.http.post<Department>(this.departmentsUrl, department, this.httpOptions).pipe(
-  //    tap((newDepartment: Department) => this.log(`added department w/ id=${newDepartment.id}`)),
-  //    catchError(this.handleError<Department>('addDepartment'))
-  //  );
-  //}
 
 
 /**
@@ -90,7 +77,7 @@ private handleError<T>(operation = 'operation', result ?: T) {
 
   /** Log a HeroService message with the MessageService */
   private log(message: string) {
-    this.messageService.add(`HeroService: ${message}`);
+    this.messageService.add(`DepartmentService: ${message}`);
   }
 }
 

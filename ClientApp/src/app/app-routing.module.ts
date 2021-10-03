@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'employee-create-edit', component: EmployeeCreateEditComponent},
   { path: 'department-list', component: DepartmentListComponent},
   { path: 'department-create-edit', component: DepartmentCreateEditComponent},
-  { path: 'department/:id', component: DepartmentDetailComponent}
+  { path: 'departments/:id', component: DepartmentDetailComponent}
 ]; // sets up routes constant where you define your routes
 
 // configures NgModule imports and exports
