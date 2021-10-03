@@ -17,8 +17,7 @@ export class DepartmentCreateEditComponent {
    
   department = new FormGroup({
     name: new FormControl(''),
-    manager: new FormControl(''),
-    status: new FormControl(''),
+    manager: new FormControl('')  
   }); 
 
   onSubmit({ value }: { value: Department }) {
