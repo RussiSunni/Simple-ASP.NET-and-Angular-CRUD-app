@@ -8,10 +8,10 @@ using Microsoft.EntityFrameworkCore;
 using HR.Data;
 using HR.Models;
 
-namespace HR.Controllers
+namespace HR.Controllers 
 {
     [Route("api/[controller]")]
-    [ApiController]
+    [ApiController] 
     public class EmployeesController : ControllerBase
     {
         private readonly DataContext _context;

@@ -7,7 +7,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { Department } from './department';
 import { MessageService } from '../message.service';
 
-const baseUrl = 'https://localhost:44319/departments';
+const baseUrl = 'https://localhost:44319/api/Departments';
 
 @Injectable({ providedIn: 'root' })
 export class DepartmentService {
@@ -38,8 +38,7 @@ export class DepartmentService {
       catchError(this.handleError<Department>(`getDepartment id=${id}`))
     );
   }
-
-  
+ 
 
   /** PUT: update the department */
   updateDepartment(department: Department): Observable<any> {
@@ -49,6 +48,14 @@ export class DepartmentService {
       catchError(this.handleError<any>('updateDepartment'))
     );
   }
+
+  /** POST: add a new department */
+  //addDepartment(department: Department): Observable<Department> {
+  //  return this.http.post<Department>(baseUrl, department, this.httpOptions).pipe(
+  //    tap((newDepartment: Department) => this.log(`added department w/ id=${newDepartment.id}`)),
+  //    catchError(this.handleError<Department>('addDepartment'))
+  //  );
+  //}
 
   /** DELETE: delete the department */
   deleteDepartment(id: number): Observable<Department> {

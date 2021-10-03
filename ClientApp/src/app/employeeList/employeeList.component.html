@@ -13,12 +13,12 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let department of departments">
+    <tr *ngFor="let employee of employees">
       <td></td>
-      <td>{{ employee.name }}</td>
-      <td>{{ employee.manager }}</td>
-      <td>{{ employee.status }}</td>
-      <td>{{ employee.name }}</td>
+      <td>{{ employee.firstName }}</td>
+      <td>{{ employee.lastName }}</td>
+      <td>{{ employee.telNumber }}</td>
+      <td>{{ employee.email }}</td> 
       <td>{{ employee.manager }}</td>
       <td>{{ employee.status }}</td>
     </tr>

@@ -9,7 +9,7 @@ using HR.Data;
 
 namespace HR.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/[controller]")]  
     [ApiController]
     public class DepartmentsController : ControllerBase
     {
@@ -20,6 +20,7 @@ namespace HR.Controllers
             _context = context;
         }
 
+        // GET: api/Departments
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Department>>> GetDepartments()
         {

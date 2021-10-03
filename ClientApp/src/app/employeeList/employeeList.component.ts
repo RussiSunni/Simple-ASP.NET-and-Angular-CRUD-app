@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { Employee } from '../employee/employee';
+import { EmployeeService } from '../employee/employee.service';
 
 @Component({
   selector: 'app-employeeList',
@@ -7,7 +9,18 @@ import { FormBuilder } from '@angular/forms';
 })
 
 export class EmployeeListComponent {
+  public employees: Employee[];
 
-  employees = ['Really Smart', 'Super Flexible',
-    'Super Hot', 'Weather Changer'];
+  constructor(http: HttpClient, private employeeService: EmployeeService) { }
+
+  ngOnInit() {
+    this.getEmployees();
+  }
+
+  getEmployees(): void {
+    this.employeeService.getEmployees()
+      .subscribe(employees => this.employees = employees);
+  }
+
+
 }

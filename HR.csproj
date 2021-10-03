@@ -59,6 +59,8 @@
     <None Remove="ClientApp\src\app\department\department.ts" />
     <None Remove="ClientApp\src\app\employeeCreateEdit\employeeCreateEdit.component.ts" />
     <None Remove="ClientApp\src\app\employeeList\employeeList.component.ts" />
+    <None Remove="ClientApp\src\app\employee\employee.service.ts" />
+    <None Remove="ClientApp\src\app\employee\employee.ts" />
     <None Remove="ClientApp\src\app\login\login.component.ts" />
     <None Remove="ClientApp\src\app\message.service.ts" />
   </ItemGroup>

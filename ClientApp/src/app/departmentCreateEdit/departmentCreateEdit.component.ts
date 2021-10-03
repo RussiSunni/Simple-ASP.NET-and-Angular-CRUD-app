@@ -5,7 +5,7 @@ import { Department } from '../department/department';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-const baseUrl = 'https://localhost:44319';
+const baseUrl = 'https://localhost:44319/api/Departments';
 
 @Component({
   selector: 'app-departmentCreateEdit',
@@ -23,7 +23,7 @@ export class DepartmentCreateEditComponent {
   onSubmit({ value }: { value: Department }) {
     console.log(value);
     this.department.reset();
-    return this.http.post(baseUrl+'/departments', value).subscribe();
+    return this.http.post(baseUrl, value).subscribe();
     }
   }
 
