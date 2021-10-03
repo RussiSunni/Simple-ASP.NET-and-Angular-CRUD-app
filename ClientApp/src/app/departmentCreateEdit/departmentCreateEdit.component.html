@@ -1,47 +1,24 @@
 <div class="container">
   <h3>Create / Edit Department</h3>
 
-  <!--<form (ngSubmit)="onSubmit()" #departmentForm="ngForm">
+  <form [formGroup]="department" (ngSubmit)="onSubmit(department)">
 
-    <div class="form-group">
-      <label for="name">*Name</label>
-      <input type="text" class="form-control" id="name"
-             required
-             name="name">
-    </div>
+    <label for="name">Name: </label>
+    <input id="name" type="text" formControlName="name" name="name"><br>
 
+    <label for="manager">Manager: </label>
+    <input id="manager" type="text" formControlName="manager" name="manager"><br>
 
-    <div class="form-group">
-      <label for="manager">*Manager</label>
-      <select class="form-control" id="manager"
-              required
-              name="manager">
-        <option *ngFor="let manager of managers" [value]="manager">{{manager}}</option>
-      </select>
-    </div>
-
-
-    <div class="form-group">
-      <label for="status">*Status</label>
-      <select class="form-control" id="status"
-              required
-              name="status">
-      </select>
-    </div>
-
-
-    <button type="submit" class="btn btn-success" [disabled]="!departmentForm.form.valid">Submit</button>
+    <label for="status">Status: </label>
+    <input id="status" type="text" formControlName="status" name="status"><br>
+ 
+    <button type="submit">Submit</button>
 
   </form>
-  </div>-->
+
+</div>
 
 
-  <div>
-    <label for="new-department">Department name: </label>
-    <input id="new-department" #departmentName />
 
-    <!-- (click) passes input value to add() and then clears the input -->
-    <button class="add-button" (click)="add(departmentName.value); departmentName.value=''">
-      Add department
-    </button>
-  </div>
+  
+

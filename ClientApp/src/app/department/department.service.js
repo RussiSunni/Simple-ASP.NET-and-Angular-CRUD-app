@@ -6,17 +6,18 @@
 ////import { MessageService } from '../message.service';
 ////@Injectable({ providedIn: 'root' })
 ////export class DepartmentService {
-////  private departmentsUrl = 'api/departments';  // URL to web api
+////  /*private departmentsUrl = 'api/Departments';*/  // URL to web api
+////  private departmentsUrl = 'https://localhost:44319/departments';
 ////  httpOptions = {
-////    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+////    headers: new HttpHeaders({ 'Content-Type': 'application/json' }) 
 ////  };
 ////  constructor(
 ////    private http: HttpClient,
 ////    private messageService: MessageService  ) { }
-////  /** POST: add a new hero to the server */
+////  /** POST: add a new department to the server */
 ////  addDepartment(department: Department): Observable<Department> {
 ////    return this.http.post<Department>(this.departmentsUrl, department, this.httpOptions).pipe(
-////      tap((newDepartment: Department) => this.log(`added hero w/ id=${newDepartment.id}`)),
+////      tap((newDepartment: Department) => this.log(`added department w/ id=${newDepartment.id}`)),
 ////      catchError(this.handleError<Department>('addDepartment'))
 ////    );
 ////  }
