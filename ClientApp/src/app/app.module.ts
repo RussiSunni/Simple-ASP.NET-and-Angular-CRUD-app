@@ -9,9 +9,9 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { EmployeeListComponent } from './employeeList/employeeList.component';
-import { EmployeeCreateEditComponent } from './employeeCreateEdit/employeeCreateEdit.component';
+import { EmployeeCreateComponent } from './employeeCreate/employeeCreate.component';
 import { DepartmentListComponent } from './departmentList/departmentList.component';
-import { DepartmentCreateEditComponent } from './departmentCreateEdit/departmentCreateEdit.component';
+import { DepartmentCreateComponent } from './departmentCreate/departmentCreate.component';
 import { DepartmentDetailComponent } from './departmentDetail/departmentDetail.component';
 import { DepartmentSearchComponent } from './departmentSearch/departmentSearch.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -24,11 +24,11 @@ import { MatButtonModule, MatIconModule, MatIconRegistry, MatListModule, MatSide
     HomeComponent,
     LoginComponent, 
     EmployeeListComponent,
-    EmployeeCreateEditComponent,
+    EmployeeCreateComponent,
     DepartmentListComponent,
-    DepartmentCreateEditComponent,
+    DepartmentCreateComponent,
     DepartmentDetailComponent,
-    DepartmentSearchComponent 
+    DepartmentSearchComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

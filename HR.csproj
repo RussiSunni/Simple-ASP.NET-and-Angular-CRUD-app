@@ -51,13 +51,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="ClientApp\src\app\departmentCreateEdit\department.service.ts" />
-    <None Remove="ClientApp\src\app\departmentCreateEdit\departmentCreateEdit.component.ts" />
+    <None Remove="ClientApp\src\app\departmentCreate\department.service.ts" />
+    <None Remove="ClientApp\src\app\departmentCreate\departmentCreate.component.ts" />
     <None Remove="ClientApp\src\app\departmentDetail\departmentDetail.component.ts" />
     <None Remove="ClientApp\src\app\departmentList\departmentList.component.ts" />
     <None Remove="ClientApp\src\app\departmentSearch\departmentSearch.component.ts" />
     <None Remove="ClientApp\src\app\department\department.ts" />
-    <None Remove="ClientApp\src\app\employeeCreateEdit\employeeCreateEdit.component.ts" />
+    <None Remove="ClientApp\src\app\employeeCreate\employeeCreate.component.ts" />
+    <None Remove="ClientApp\src\app\employeeDetail\employeeDetail.component.ts" />
     <None Remove="ClientApp\src\app\employeeList\employeeList.component.ts" />
     <None Remove="ClientApp\src\app\employee\employee.service.ts" />
     <None Remove="ClientApp\src\app\employee\employee.ts" />

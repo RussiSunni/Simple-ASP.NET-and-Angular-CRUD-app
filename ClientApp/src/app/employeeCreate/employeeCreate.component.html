@@ -1,0 +1,53 @@
+<div class="container">
+  <h3>Create / Edit Employee</h3>
+
+  <form [formGroup]="employee" (ngSubmit)="onSubmit(employee)">
+
+    <div class="form-group">
+      <label for="firstname">*First name</label>
+      <input type="text" class="form-control" id="firstname"
+             required
+             name="firstname" formControlName="firstname"> 
+    </div>
+
+    <div class="form-group">
+      <label for="lastname">*Last name</label>
+      <input type="text" class="form-control" id="lastname"
+             required
+             name="lastname"  formControlName="lastname">
+    </div>
+
+    <div class="form-group">
+      <label for="telnumber">*Telephone Number</label>
+      <input type="text" class="form-control" id="telnumber"
+             required
+             name="telnumber"  formControlName="telnumber">
+    </div> 
+
+    <div class="form-group">
+      <label for="email">*Email Address</label>
+      <input type="text" class="form-control" id="email"
+             required
+             name="email" formControlName="email">
+    </div>
+
+    <div class="form-group">
+      <label for="manager">*Manager</label>
+      <input type="text" class="form-control" id="manager"
+             required
+             name="manager" formControlName="manager">
+    </div>
+
+
+    <div class="form-group">
+      <label for="status">*Status</label>
+      <input type="text" class="form-control" id="status"
+             required
+             name="status" formControlName="status">
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+
+  </form>
+</div>
+

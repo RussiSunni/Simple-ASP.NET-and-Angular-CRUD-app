@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Department } from '../department/department';
 import { DepartmentService } from '../department/department.service';
@@ -24,7 +24,7 @@ export class DepartmentListComponent {
 
   delete(department: Department): void {
     this.departments = this.departments.filter(h => h !== department);
-    this.departmentService.deleteDepartment(department.id).subscribe();
+    this.departmentService.deleteDepartment(department.id).subscribe(); 
   }   
 }
  
