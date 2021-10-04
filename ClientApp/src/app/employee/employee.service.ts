@@ -38,6 +38,15 @@ export class EmployeeService {
     );
   }
 
+  /** PUT: update the department */
+  updateEmployee(employee: Employee): Observable<any> {
+    const url = `${baseUrl}/${employee.id}`;
+    return this.http.put(url, employee, this.httpOptions).pipe(
+      tap(_ => this.log(`updated employee id=1`)),
+      catchError(this.handleError<any>('updateEmployee'))
+    );
+  }
+
 
   /** DELETE: delete the employee */
   deleteEmployee(id: number): Observable<Employee> {
