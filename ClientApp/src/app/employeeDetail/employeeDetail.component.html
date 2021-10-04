@@ -1,0 +1,31 @@
+<div *ngIf="employee">
+  <h2>{{employee.firstName | uppercase}} Details</h2>
+  <div><span>id: </span>{{employee.id}}</div>
+
+  <div class="form-group">
+    <label for="employee-firstname">*First name</label>
+    <input type="text" class="form-control" id="employee-firstname" [(ngModel)]="employee.firstName" placeholder="Employee first name" />
+  </div>
+  <div class="form-group">
+    <label for="employee-lastname">*Last name</label>
+    <input type="text" class="form-control" id="employee-lastname" [(ngModel)]="employee.lastName" placeholder="Employee last name" />
+  </div>
+  <div class="form-group">
+    <label for="employee-telnumber">*Telephone number</label>
+    <input type="text" class="form-control" id="employee-telnumber" [(ngModel)]="employee.telNumber" placeholder="Telephone number" />
+  </div>
+  <div class="form-group">
+    <label for="employee-email">*Email</label>
+    <input type="text" class="form-control" id="employee-email" [(ngModel)]="employee.email" placeholder="Email" />
+  </div>
+  <div class="form-group">
+    <label for="employee-manager">*Manager</label>
+    <input type="text" class="form-control" id="employee-manager" [(ngModel)]="employee.manager" placeholder="Employee manager" />
+  </div>
+  <div class="form-group">
+    <label for="employee-status">*Status</label>
+    <input type="text" class="form-control" id="employee-status" [(ngModel)]="employee.status" placeholder="Employee status" />
+  </div>
+  <button class="btn btn-warning" (click)="goBack()">go back</button>
+  <button class="btn btn-success" (click)="save(employee)">save</button>
+</div>
