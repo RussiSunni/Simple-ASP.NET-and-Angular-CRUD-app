@@ -18,7 +18,7 @@ export class EmployeeService {
 
   constructor(
     private http: HttpClient,
-    private messageService: MessageService) { }
+    private messageService: MessageService) { } 
 
   /** GET employees */
   getEmployees(): Observable<Employee[]> {
@@ -27,6 +27,25 @@ export class EmployeeService {
         tap(_ => this.log('fetched employees')),
         catchError(this.handleError<Employee[]>('getEmployees', []))
       );
+  }
+
+  /** GET: get employee details, by id */
+  getEmployee(id: number): Observable<Employee> {
+    const url = `${baseUrl}/${id}`;
+    return this.http.get<Employee>(url).pipe(
+      tap(_ => this.log(`fetched employee id=${id}`)),
+      catchError(this.handleError<Employee>(`getEmployee id=${id}`))
+    );
+  }
+
+
+  /** DELETE: delete the employee */
+  deleteEmployee(id: number): Observable<Employee> {
+    const url = `${baseUrl}/${id}`;
+    return this.http.delete<Employee>(url, this.httpOptions).pipe(
+      tap(_ => this.log(`deleted employee id=${id}`)),
+      catchError(this.handleError<Employee>('deleteEmployee'))
+    );
   }
 
   /**
@@ -49,8 +68,8 @@ export class EmployeeService {
     };
   }
 
-  /** Log a HeroService message with the MessageService */
+  /** Log a EmployeeService message with the MessageService */
   private log(message: string) {
-    this.messageService.add(`DepartmentService: ${message}`);
+    this.messageService.add(`EmployeeService: ${message}`);
   }
 }

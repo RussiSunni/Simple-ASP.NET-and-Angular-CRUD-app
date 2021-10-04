@@ -14,7 +14,15 @@
   </thead>
   <tbody>
     <tr *ngFor="let employee of employees">
-      <td></td>
+      <td>
+        <a routerLink="/employees/{{employee.id}}">
+          Edit
+        </a>
+        <button class="delete" title="delete employee"
+                (click)="delete(employee)">
+          Deactivate
+        </button>
+      </td>
       <td>{{ employee.firstName }}</td>
       <td>{{ employee.lastName }}</td>
       <td>{{ employee.telNumber }}</td>

@@ -19,8 +19,11 @@ export class EmployeeListComponent {
 
   getEmployees(): void {
     this.employeeService.getEmployees()
-      .subscribe(employees => this.employees = employees);
+      .subscribe(employees => this.employees = employees); 
   }
 
-
+  delete(employee: Employee): void {
+    this.employees = this.employees.filter(h => h !== employee);
+    this.employeeService.deleteEmployee(employee.id).subscribe();
+  }
 }
